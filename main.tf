@@ -27,7 +27,7 @@ variable "aws_region" {
 }
 
 variable "num_webs" {
-  default = "1"
+  default = "2"
 }
 
 provider "aws" {
@@ -45,7 +45,7 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = ["sg-29ef374e"]
 
   tags {
-    Identity = "autodesk-buffalos"
+    Identity = "autodesk-buffalo"
     Name     = "MyWeb Server"
     Service  = "webapp"
     MyName   = "web ${count.index+1}/${var.num_webs}"
