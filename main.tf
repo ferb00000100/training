@@ -27,8 +27,8 @@ variable "aws_region" {
 }
 
 variable "num_webs" {
-  default = "3
-
+  default = "3"
+}
 
 provider "aws" {
   access_key = "${var.aws_access_key}"
@@ -55,4 +55,3 @@ resource "aws_instance" "web" {
 output "public_dns" {
   value = ["${aws_instance.web.*.public_dns}"]
 }
-yippee!!
